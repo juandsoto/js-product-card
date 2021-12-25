@@ -3,6 +3,10 @@
 	"license": "MIT",
 	"main": "dist/index.js",
 	"typings": "dist/index.d.ts",
+	"repository": {
+		"url": "https://github.com/juandsoto/js-product-card",
+		"type": "git"
+	},
 	"files": [
 		"dist",
 		"src"
@@ -17,7 +21,8 @@
 		"lint": "tsdx lint",
 		"prepare": "tsdx build",
 		"size": "size-limit",
-		"analyze": "size-limit --why"
+		"analyze": "size-limit --why",
+		"test:watch": "tsdx test --watch"
 	},
 	"peerDependencies": {
 		"react": ">=16"
@@ -47,17 +52,30 @@
 		}
 	],
 	"devDependencies": {
+		"@babel/preset-env": "^7.16.5",
+		"@babel/preset-react": "^7.16.5",
 		"@rollup/plugin-image": "^2.1.1",
 		"@size-limit/preset-small-lib": "^7.0.4",
-		"@types/react": "^17.0.38",
 		"@types/react-dom": "^17.0.11",
+		"@types/react-test-renderer": "^17.0.1",
+		"@types/react": "^17.0.38",
+		"babel-jest": "^27.4.5",
 		"husky": "^7.0.4",
-		"react": "^17.0.2",
+		"identity-obj-proxy": "^3.0.0",
+		"jest": "^25.5.4",
 		"react-dom": "^17.0.2",
+		"react-test-renderer": "^17.0.2",
+		"react": "^17.0.2",
 		"rollup-plugin-postcss": "^4.0.2",
 		"size-limit": "^7.0.4",
 		"tsdx": "^0.14.1",
 		"tslib": "^2.3.1",
 		"typescript": "^3.9.10"
+	},
+	"jest": {
+		"moduleNameMapper": {
+			"\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "identity-obj-proxy",
+			"\\.(css|less|scss|sass)$": "identity-obj-proxy"
+		}
 	}
 }
